@@ -1,0 +1,9 @@
+u_data.csv
+db.sqlite3
+.DS_Store
+.direnv
+.envrc
+__pycache__
+secrets.py
+u_item.csv
+u_user.csv
