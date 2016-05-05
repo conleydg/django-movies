@@ -8,15 +8,15 @@ class Rater(models.Model):
     occupation = models.CharField(max_length=255)
 
 
-class Movies(models.Model):
+class Movie(models.Model):
     movie_id = models.CharField(max_length=255, primary_key=True)
     movie_title = models.CharField(max_length=255)
     release_date = models.CharField(max_length=255)
+    avg_rating = models.FloatField(default=0)
 
 
 class Rating(models.Model):
-    user_id = models.CharField(max_length=255)
-    movie_id = models.CharField(max_length=255)
-    rating = models.CharField(max_length=255)
-    # rater = models.ForeignKey(Rater, on_delete=models.CASCADE)
-    # movies = models.ForeignKey(Movies, on_delete=models.CASCADE)
+    # movie_id = models.CharField(max_length=255)
+    rating = models.IntegerField(default=0)
+    rater = models.ForeignKey(Rater, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
